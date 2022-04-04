@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+## Abstract
 
-You can use the [editor on GitHub](https://github.com/chiralevy/Deep-Learning-with-Biologically-Plausible-Neural-Networks/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+(To be written once the performance metrics of the neural networks, and my interpretation thereof, are completed.) 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Introduction
 
-### Markdown
+The human brain serves as the ultimate inspiration for the field of artificial intelligence. Of the many "intelligent" machine learning algorithms and computational architectures that have adopted properties of our nervous system to achieve the brain’s efficiency, artificial neural networks (ANNs) have most explicitly done so, successfully mimicking many representations of brain function. Simply, an artificial neural network comprises a means of performing machine learning and thus learns from data to predict and classify information. The power of this technique, however, often exceeds that of other machine learning algorithms as evidenced in its preferential use by state of the art artificial intelligence systems, such as Apple's speech recognition (Aron, 2011) and DeepMind's AlphaFold (Jumper et al., 2021). This has led many to believe that the brain-inspired approach of neural networks has conferred onto the algorithm a human-like ability to recognize patterns and that biological plausibility may be a guide to further advances in artificial intelligence.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Given the brain embodies many of the functions we wish to see in deep learning technology, it is reasonable to believe that the principles of neuroscience can serve as a guide in the development of more robust deep learning and intelligent systems. In spite of this, many of today's artificial neural networks are still vague representations of the biological neural networks they were originally modeled after and the differences between the two are increasingly outweighing the similarities. This growing deviation of artificial neural networks from biological neural networks is further exacerbated by a lack of collaboration between the fields of neuroscience and artificial intelligence which is requisite for the development of biologically powerful algorithms. To confront these challenges, the present project investigates and demonstrates how neuroscience can serve as a source of inspiration for artificial intelligence via biologically-plausible Neural Networks and the applications thereof.
 
-```markdown
-Syntax highlighted code block
+Within this investigation of ways in which biological plausibility may improve neural networks, an existing algorithm known as a spiking neural network (SNN) will be discussed in relatively greater depth and comprise the majority of my engagement with the various routes to biological plausibility in deep learning algorithms. SNNs are artificial neural networks that more closely mimic biological neural networks in that their neurons send information on their own schedule relative to others (i.e. asynchronously), particularly when their computational equivalent of a membrane reaches a specific value known as the threshold. Given the progress made by SNNs in achieving a biologically plausible architecture, they serve as a great foundation for a discussion on what biological plausibility in neural networks may look like and what direction should be trekked to improve upon what currently works. 
 
-# Header 1
-## Header 2
-### Header 3
+Before proceeding, it’s worth noting that there exists three main limitations in the present project thesis. First, the pursuit of biological plausibility will be inherently limited by the constraints of in-silico development, so while the standards of our biological-plausible networks are high, they reasonably fit within these constraints. The second limitation constitutes the fact that most comprehensive software packages for simulating SNNs were developed to model neural circuits and not target machine learning applications as is intended in this project. In spite of this, there exist a handful of solid, although uncommon, software packages that can be used for machine learning applications. Lastly, it has been shown that neural networks with a great degree of biological realism are not appropriate for applications in machine learning since they are computationally expensive to simulate. While this represents a major obstacle to the present goal, it is unlikely that the neural networks to be used will reach the magnitude that will push the limits of the standard GPU (Hazan et al., 2018).
 
-- Bulleted
-- List
+## Spiking Neural Networks
 
-1. Numbered
-2. List
+Convolutional neural networks and recurrent neural networks demonstrate that neuroscience can serve as a source of inspiration for artificial neural network architecture, furthermore, that biologically inspired algorithms can exceed the performance of conventional ones.
 
-**Bold** and _Italic_ and `Code` text
+However, when it comes to the pursuit of biological-plausibility, it’s worth noting that classic CNNs and RNNs are fairly still artificial and can only claim bio-inspiration— a word for which there exists very little criteria. Because the standard for what constitutes bio-inspiration is low, many of today's “bio-inspired” neural networks merely pick and choose which parts of neurons to mimic (with varying extents) and thus do not comprehensively demonstrate whether neural computation in and of itself can improve artificial neural networks. Investigating this question requires stepping beyond bio-inspiration in neural networks and into biological plausibility, that is, neural networks that do not selectively replicate parts of biology, but rather aim to encompass all properties of it. Granted, building intelligent machines in silico inherently limits the extent to which artificial neurons can mimic biological ones, replication of the algorithmic levels of neural computation is feasible and represents a viable goal in the pursuit of biological plausibility. As the field stands today, spiking neural networks serve as a logical first step to this goal.
 
-[Link](url) and ![Image](src)
-```
+As described above, spiking neural networks largely differ from today's conventional deep neural networks in that they incorporate the temporal dimension of neural computation. That is, instead of forwardly propagating information synchronously as is typically done by default, the neurons of an SSN transmit info only when their computational equivalent of a membrane potential— the membrane's electrical charge— reaches a threshold. Once this threshold is achieved, this neuron "spikes" (typically represented as a zero or one in an activation function) and sends a signal to other neurons which in turn influences their membrane potential. Depending on the implementation of the SSN, after this, the value of the neuron can briefly drop below its initial activation to mimic a biological neuron’s refractory period after an action potential. In operation, multiple spikes at discrete points in time create the appearance of “spike trains” which are a series of spikes that are inputted into a network and produced as output. At the end, whether the neuron fired or did not receive the sufficient number of spikes to fire, the value of the neuron will gradually return to its baseline (Ponulak & Kasiński, 2010). 
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Over the years, various models have been developed to model the SSN. The most popular and the one to be used here is the Leaky Integrate and Fire threshold model which simply proposes setting the value in a neuron to its activation level and then having incoming spike trains increase or decrease this value until the threshold is reached or the state decays. The main goal in this model is to train the synapses (the weights) to cause the postsynaptic neuron to generate a spike train with desired spike times.
+ 
+## Advantages of Spiking Neural Networks
 
-### Jekyll Themes
+Given their novel means of learning, SNNs are rarely used outside of niche research settings and thus a full set of their desirable properties has yet to be developed. Of the research that has been done, however, it has been well established that one of the main advantages of SNNs is their ability to efficiently encode temporal information (Han & Roy, 2020). This ability is largely attributed to their use of trains of binary outputs as opposed to conventional continuous outputs. This preservation of temporal information is known to allow for a better representation of dynamic features, such as sounds, and enables faster responses to events. It is also thought that this temporal encoding is more computationally efficient as information can be encoded in the timing of a single spike itself (Comsa et al., 2019). In addition to this, a relatively small body of literature has shown SNNs to be computationally more powerful than conventional artificial neural networks as they add this additional dimension (temporal) to the representational and processing capabilities of neural networks. This is currently debated, however. 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/chiralevy/Deep-Learning-with-Biologically-Plausible-Neural-Networks/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+From a neuroscience perspective, SNNs are useful, because they can be used to investigate biological neural circuits and model specific brain functions. This advantage emphasizes their utility for the current project; their performance, as biologically-plausible neural networks, sheds direct insights into whether biological plausibility is a next step in the development of deep learning.
 
-### Support or Contact
+## Methods
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+## Results
+
+## Discussion
+
+## Ethical Concerns
+
+## Reflection - Epilogue
