@@ -2,6 +2,8 @@
 
 (To be written once the performance metrics of the neural networks, and my interpretation thereof, are completed.) 
 
+![Image](https://losslandscape.com/wp-content/uploads/2019/09/loss-landscape-research-9.jpg)
+
 ## Introduction
 
 The human brain serves as the ultimate inspiration for the field of artificial intelligence. Of the many "intelligent" machine learning algorithms and computational architectures that have adopted properties of our nervous system to achieve the brain’s efficiency, artificial neural networks (ANNs) have most explicitly done so, successfully mimicking many representations of brain function. Simply, an artificial neural network comprises a means of performing machine learning and thus learns from data to predict and classify information. The power of this technique, however, often exceeds that of other machine learning algorithms as evidenced in its preferential use by state of the art artificial intelligence systems, such as Apple's speech recognition (Aron, 2011) and DeepMind's AlphaFold (Jumper et al., 2021). This has led many to believe that the brain-inspired approach of neural networks has conferred onto the algorithm a human-like ability to recognize patterns and that biological plausibility may be a guide to further advances in artificial intelligence.
@@ -21,17 +23,58 @@ However, when it comes to the pursuit of biological-plausibility, it’s worth n
 As described above, spiking neural networks largely differ from today's conventional deep neural networks in that they incorporate the temporal dimension of neural computation. That is, instead of forwardly propagating information synchronously as is typically done by default, the neurons of an SSN transmit info only when their computational equivalent of a membrane potential— the membrane's electrical charge— reaches a threshold. Once this threshold is achieved, this neuron "spikes" (typically represented as a zero or one in an activation function) and sends a signal to other neurons which in turn influences their membrane potential. Depending on the implementation of the SSN, after this, the value of the neuron can briefly drop below its initial activation to mimic a biological neuron’s refractory period after an action potential. In operation, multiple spikes at discrete points in time create the appearance of “spike trains” which are a series of spikes that are inputted into a network and produced as output. At the end, whether the neuron fired or did not receive the sufficient number of spikes to fire, the value of the neuron will gradually return to its baseline (Ponulak & Kasiński, 2010). 
 
 Over the years, various models have been developed to model the SSN. The most popular and the one to be used here is the Leaky Integrate and Fire threshold model which simply proposes setting the value in a neuron to its activation level and then having incoming spike trains increase or decrease this value until the threshold is reached or the state decays. The main goal in this model is to train the synapses (the weights) to cause the postsynaptic neuron to generate a spike train with desired spike times.
- 
-## Advantages of Spiking Neural Networks
 
-Given their novel means of learning, SNNs are rarely used outside of niche research settings and thus a full set of their desirable properties has yet to be developed. Of the research that has been done, however, it has been well established that one of the main advantages of SNNs is their ability to efficiently encode temporal information (Han & Roy, 2020). This ability is largely attributed to their use of trains of binary outputs as opposed to conventional continuous outputs. This preservation of temporal information is known to allow for a better representation of dynamic features, such as sounds, and enables faster responses to events. It is also thought that this temporal encoding is more computationally efficient as information can be encoded in the timing of a single spike itself (Comsa et al., 2019). In addition to this, a relatively small body of literature has shown SNNs to be computationally more powerful than conventional artificial neural networks as they add this additional dimension (temporal) to the representational and processing capabilities of neural networks. This is currently debated, however. 
+A code example of a leaky integrate-and-fire neural network is shown below (syntax provided by SNNTorch). Note snn.Leaky() instantiates a simple leaky integrate-and-fire neuron.
 
-From a neuroscience perspective, SNNs are useful, because they can be used to investigate biological neural circuits and model specific brain functions. This advantage emphasizes their utility for the current project; their performance, as biologically-plausible neural networks, sheds direct insights into whether biological plausibility is a next step in the development of deep learning.
+```
+import torch, torch.nn as nn
+import snntorch as snn
+from snntorch import surrogate
+
+num_steps = 25 # number of time steps
+batch_size = 1
+beta = 0.5  # neuron decay rate
+spike_grad = surrogate.fast_sigmoid()
+
+net = nn.Sequential(
+      nn.Conv2d(1, 8, 5),
+      nn.MaxPool2d(2),
+      snn.Leaky(beta=beta, init_hidden=True, spike_grad=spike_grad),
+      nn.Conv2d(8, 16, 5),
+      nn.MaxPool2d(2),
+      snn.Leaky(beta=beta, init_hidden=True, spike_grad=spike_grad),
+      nn.Flatten(),
+      nn.Linear(16 * 4 * 4, 10),
+      snn.Leaky(beta=beta, init_hidden=True, spike_grad=spike_grad, output=True)
+      )
+
+# random input data
+data_in = torch.rand(num_steps, batch_size, 1, 28, 28)
+
+spike_recording = []
+
+for step in range(num_steps):
+    spike, state = net(data_in[step])
+    spike_recording.append(spike)
+
+```
 
 ## Methods
 
+My project goal is to identify spiking network architectures where performance and biological plausibility are not mutually exclusive and, particularly, cases in which biological plausibility is the cause of exceptional performance. This will entail experimentally comparing the average performance of SNNs with their conventional DNN counterparts on several benchmarks to assess whether there is an advantage in the mere use of temporally dynamic spikes as opposed to conventional DNNs. 
+
+These benchmarks include:
+1. N-MNIST (Modified National Institute of Standards and Technology database) 
+2. CIFAR-10 - DVS
+3. NORB
+5. DVS-Gesture
+
 
 ## Results
+
+[In Progress](https://github.com/chiralevy/Deep-Learning-with-Biologically-Plausible-Neural-Networks/blob/main/MNIST_SNN.ipynb)
+
+
 
 ## Discussion
 
