@@ -3,7 +3,7 @@
 (To be written once the performance metrics of the neural networks, and my interpretation thereof, are completed.) 
 
 ![Image](https://losslandscape.com/wp-content/uploads/2019/09/loss-landscape-research-9.jpg)
-_(Artistic Visualization of the "loss landscape" of neural networks [source](https://losslandscape.com/)_
+_Artistic visualization of the "loss landscape" of neural networks [source](https://losslandscape.com/)_
 
 ## Introduction
 
@@ -74,7 +74,7 @@ These benchmarks include:
 
 ## Results
 
-[In progress](https://github.com/chiralevy/Deep-Learning-with-Biologically-Plausible-Neural-Networks/blob/main/MNIST_SNN.ipynb)
+- [In progress](https://github.com/chiralevy/Deep-Learning-with-Biologically-Plausible-Neural-Networks/blob/main/MNIST_SNN.ipynb)
 
 ## Discussion
 
