@@ -94,25 +94,25 @@ Certain flaws or gaps in the present thesis outline future directions for this p
 This thesis presents how neuroscience can serve as a source of inspiration for artificial intelligence through an analysis of spiking neural networks and their performance relative to artificial neural networks on machine learning benchmarks. In this analysis, three experiments were conducted to compare the performance of SNNs and ANNs and to determine the extent to which biological plausibility can improve neural networks. The first experiment compares the performance of a CNN and a CSNN on the MNIST task, the second compares similar networks on the CIFAR-10 task, and the last compares an LSNN, LSTM, and CNN on the Google Speech Commands Task. The performance results achieved across these experiments demonstrate that spiking neural networks perform comparably to artificial neural networks and likely carry the advantage of being more computationally efficient. That said, this thesis merely scrapes the surface of biologically plausible neural networks and further investigation is required before these networks can solidify the role of neuroscience in the development of artificial intelligence.
 
 ## List of Abbreviations
-ANN - Artificial (Analog) neural network
-BPTT -  Backpropagation-Through-Time
-CIFAR-10 - Canadian Institute for Advanced Research (10 classes)
-CNN - Convolutional neural network
-CSNN - Convolutional Spiking Neural Network
-CPU - Central processing unit
-DNN - Deep neural network
-GPU - Graphical processing unit
-GSC - Google Speech Commands
-LIF - Leaky integrate-and-fire
-LSNN - Long short-term spiking neural network
-LSTM - Long short-term memory (unit, network, etc.)
-MNIST - Modified National Institute of Standards and Technology dataset
-N-MNIST - Neuromorphic MNIST
-RAM - Random access memory
-ReLU - Rectified linear unit
-RNN - Recurrent neural network
-SFA - Spike Frequency Adaptation
-SGD - Surrogate gradient descent
-SNN - Spiking neural network
-STDP - Spike-timing-dependent plasticity
-TIMIT - Texas Instruments/Massachusetts Institute of Technology Dataset
+- ANN - Artificial (Analog) neural network
+- BPTT -  Backpropagation-Through-Time
+- CIFAR-10 - Canadian Institute for Advanced Research (10 classes)
+- CNN - Convolutional neural network
+- CSNN - Convolutional Spiking Neural Network
+- CPU - Central processing unit
+- DNN - Deep neural network
+- GPU - Graphical processing unit
+- GSC - Google Speech Commands
+- LIF - Leaky integrate-and-fire
+- LSNN - Long short-term spiking neural network
+- LSTM - Long short-term memory (unit, network, etc.)
+- MNIST - Modified National Institute of Standards and Technology dataset
+- N-MNIST - Neuromorphic MNIST
+- RAM - Random access memory
+- ReLU - Rectified linear unit
+- RNN - Recurrent neural network
+- SFA - Spike Frequency Adaptation
+- SGD - Surrogate gradient descent
+- SNN - Spiking neural network
+- STDP - Spike-timing-dependent plasticity
+- TIMIT - Texas Instruments/Massachusetts Institute of Technology Dataset
