@@ -1,4 +1,4 @@
-## Paths to a Less Artificial Intelligence
+## Paths to a Less Artificial Intelligence: Deep Learning with Biologically Plausible Neural Networks
 
 ## Introduction
 
