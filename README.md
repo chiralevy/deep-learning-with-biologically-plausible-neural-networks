@@ -1,8 +1,5 @@
 ## Paths to a Less Artificial Intelligence
 
-![Image](https://losslandscape.com/wp-content/uploads/2019/09/loss-landscape-research-9.jpg)
-_Artistic visualization of the "loss landscape" of neural networks [source](https://losslandscape.com/)_
-
 ## Introduction
 
 The human brain serves as the ultimate inspiration for the field of artificial intelligence. Of the many machine learning algorithms that have adopted properties of our nervous system to achieve its efficiency, the most renowned is the artificial neural network (ANN). Inspired by the depth and connectivity of biological neural networks, ANNs use layers of computational neurons to perform a distinct form of machine learning called "deep learning". This technique allows them to learn from colossal amounts of data to predict and classify information with great accuracy. The power of this technique often exceeds that of other machine learning algorithms as evidenced in a wealth of literature and its preferential use by state-of-the-art artificial intelligence systems such as Apple's Siri ([Aron, 2011](https://doi.org/10.1016/S0262-4079(11)62647-X)) and DeepMind's AlphaFold ([Jumper et al., 2021](https://doi.org/10.1038/s41586-021-03819-2)). This distinction has led me to believe that the brain-inspired approach of neural networks has conferred onto the algorithm a human-like ability to recognize patterns and that biological plausibility may be a guide to further advances in artificial intelligence.
