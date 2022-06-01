@@ -1,6 +1,7 @@
 ## Paths to a Less Artificial Intelligence
 
-![Image]([https://losslandscape.com/wp-content/uploads/2019/09/loss-landscape-research-9.jpg](https://1.bp.blogspot.com/-CjdolPLTKxo/XzdyjCPbRwI/AAAAAAAAB0E/twI3Q6CRup8DZMQPC7wLSTsKQk36Z8KhQCLcBGAsYHQ/s850/Similarity-between-biological-and-artificial-neural-networks-Arbib-2003a-Haykin.png))
+![Image](https://1.bp.blogspot.com/-CjdolPLTKxo/XzdyjCPbRwI/AAAAAAAAB0E/twI3Q6CRup8DZMQPC7wLSTsKQk36Z8KhQCLcBGAsYHQ/s850/Similarity-between-biological-and-artificial-neural-networks-Arbib-2003a-Haykin.png)
+
 _Comparison between a biological neuron and the McCulloch-Pitts neuron (Arbib, 2003a)._
 
 ## Introduction
