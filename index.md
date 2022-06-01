@@ -170,4 +170,4 @@ This thesis presents how neuroscience can serve as a source of inspiration for a
 - STDP - Spike-timing-dependent plasticity
 - TIMIT - Texas Instruments/Massachusetts Institute of Technology Dataset
 
-#### (References) [https://docs.google.com/document/d/11ODpII-MD2wccspjFZW2LezxmHMP_yHJ6U0KpzTEFyw/edit?usp=sharing]
+### [References](https://docs.google.com/document/d/11ODpII-MD2wccspjFZW2LezxmHMP_yHJ6U0KpzTEFyw/edit?usp=sharing)
