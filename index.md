@@ -119,6 +119,7 @@ In terms of pipeline specifications, I trained the LSNN using 2048 hidden neuron
 
 
 ## Results
+
 | Benchmark   | Network Type| Test Text     |
 | :---        |    :----:   |          ---: |
 | MNIST       | CSNN        | 98.06         |
